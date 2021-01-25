@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .row {
+            display: flex;
+        }
+
+        .col-md-4 {
+            margin: auto;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 3rem;
+        }
+
+        .col-md-4 ul li,
+        ol li {
+            font-size: 1.5rem;
+            list-style: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4" id="a">
+                <h1>A</h1>
+                <p>Create Routine</p>
+            </div>
+            <div class="col-md-4" id="b">
+                <h1>B</h1>
+                <p>Show Routine</p>
+            </div>
+            <div class="col-md-4" id="c">
+                <h1>C</h1>
+                <p>List Courses with Teachers Name</p>
+            </div>
+        </div>
+        <div id="output">
+            <div class="col-md-4" id="output_a"></div>
+            <div class="col-md-4" id="output_b"></div>
+            <div class="col-md-4" id="output_c"></div>
+        </div>
+    </div>
+
+
+
+    <script>
+        const a = document.getElementById('a');
+        const b = document.getElementById('b');
+        const c = document.getElementById('c');
+
+        //Creating hard code routine section
+        const output_a = document.getElementById('output_a');
+
+        a.addEventListener('click', () => console.log('a'))
+        a.addEventListener('click', () => {
+            const output_a = document.getElementById('output_a');
+
+            const fullPlan = document.createElement('div');
+            fullPlan.innerHTML = `
+                <div>
+                    <h1>Create Course List</h1>
+                    <h4>Course Index</h4>
+                    <ol>
+                        <li>0.English Grammar</li>
+                        <li>1.Mathematics</li>
+                        <li>2.Physics</li>
+                        <li>3.Chemistry</li>
+                        <li>4.Biology</li>
+                    </ol>
+                    </br>
+                    <h3>Create List</h3>
+                    <h4>Provide input in the following pattern</h4>
+                    <p>dayIndex(0 - 4) hourIndex(0 - 3) courseIndex(0 - 4)</p>
+                    <ol>
+                        <li>0 0 0</li>
+                        <li>0 1 4</li>
+                        <li>0 2 2</li>
+                        <li>0 3 3</li>
+                    </ol>
+                </div>`
+            output_a.appendChild(fullPlan);
+            document.getElementById('output_b').innerHTML = '';
+            document.getElementById('output_c').innerHTML = '';
+        })
+
+
+        //Creating hard code week's full class plan
+        b.addEventListener('click', () => console.log('b'))
+        b.addEventListener('click', () => {
+            const output_b = document.getElementById('output_b');
+            const fullPlan = document.createElement('div');
+            fullPlan.innerHTML = `
+                <div>
+                    <h1>Week's full class plan</h1>
+                    <p>Class plan in the following format:</p>
+                    <h4>dayIndex(0 - 4) hourIndex(0 - 3) courseName</h4>
+                    <br/>
+                    <ol>
+                        <li0 0 English Grammar</li>
+                        <li>0 1 Biology</li>
+                        <li>0 2 Physics</li>
+                        <li>0 3 Chemistry</li>
+                    </ol>
+                </div>`
+            output_b.appendChild(fullPlan);
+            document.getElementById('output_a').innerHTML = '';
+            document.getElementById('output_c').innerHTML = '';
+        })
+
+
+
+        //Creating hard code courses and teacher's name
+        c.addEventListener('click', () => {
+            const output_c = document.getElementById('output_c');
+            const teacherDetails = document.createElement('div');
+            teacherDetails.innerHTML = `<div>
+                    <h1>Course and teacher's name.</h1>
+                    <ul>
+                        <li>English Grammar, <strong>John Smith</strong></li>
+
+                        <li>Mathematics, <strong> Lara Gilbert</strong></li>
+
+                        <li>Physics, <strong>Johanna Kabir</strong></li>
+
+                        <li>Chemistry, <strong>Danniel Robertson</strong></li>
+
+                        <li>Biology, <strong>Larry Cooper</strong> </li>
+                    </ul>
+                </div>`
+            output_c.appendChild(teacherDetails);
+            document.getElementById('output_a').innerHTML = '';
+            document.getElementById('output_b').innerHTML = '';
+        })
+    </script>
+</body>
+
+</html>
