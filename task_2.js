@@ -9,9 +9,8 @@ const janitor = ()=>{
     }
     else{
       for (let j = i+1; j < weight.length; j++) {
-        let sum = weight[i]+weight[j];
-        if (sum <=3) {
-          trip.push(sum)
+        if (weight[i]+weight[j] <=3) {
+          trip.push([weight[i],weight[j]])
         }
     }
   } 
